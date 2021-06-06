@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/Users/wachayathorn/.dotnet/store/|arch|/|tfm|",
-      "/Users/wachayathorn/.nuget/packages"
+      "C:\\Users\\Wachayathorn\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Wachayathorn\\.nuget\\packages"
     ]
   }
 }

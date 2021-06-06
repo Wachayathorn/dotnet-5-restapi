@@ -30,9 +30,5 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Business\" />
-    <Folder Include="Dto\" />
-    <Folder Include="Dto\Request\" />
-    <Folder Include="Dto\Response\" />
-    <Folder Include="Dto\Request\User\" />
   </ItemGroup>
 </Project>
