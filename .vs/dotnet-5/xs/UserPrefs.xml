@@ -1,18 +1,20 @@
 ﻿<Properties StartupConfiguration="{6C1FB0D6-28F0-4F5D-A647-0E8896018FFC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-5/Dockerfile">
+    <Files>
+      <File FileName="dotnet-5/Dockerfile" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dotnet-5" expanded="True">
             <Node name="dotnet-5" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UserController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Dto" expanded="True">
                 <Node name="Request" expanded="True" />
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
+              <Node name="Dockerfile" selected="True" />
             </Node>
           </Node>
         </State>
