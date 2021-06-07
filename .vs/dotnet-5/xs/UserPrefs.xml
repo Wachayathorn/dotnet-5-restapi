@@ -1,16 +1,18 @@
 ﻿<Properties StartupConfiguration="{6C1FB0D6-28F0-4F5D-A647-0E8896018FFC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-5/Properties/launchSettings.json">
-    <Files>
-      <File FileName="dotnet-5/Properties/launchSettings.json" Line="24" Column="29" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dotnet-5" expanded="True">
             <Node name="dotnet-5" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UserController.cs" selected="True" />
               </Node>
+              <Node name="Dto" expanded="True">
+                <Node name="Request" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using dotnet_5.Business;
 using dotnet_5.Dto.Request.User;
-using dotnet_5.Dto.Response;
 using dotnet_5.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_5.Controllers
@@ -13,39 +12,88 @@ namespace dotnet_5.Controllers
     [Route("/user")]
     public partial class UserController : Controller
     {
-        private UserBusiness userBusiness;
-        public UserController(UserBusiness userBusiness)
+        private DOTNET5Context db;
+        public UserController(DOTNET5Context db)
         {
-            this.userBusiness = userBusiness;
+            this.db = db;
         }
 
         [HttpPost]
-        public async Task<ActionResult<CreateUserResponseDto>> createUser([FromBody] CreateUserRequestDto data) {
-            return await this.userBusiness.createUser(data);
+        public async Task<ActionResult> createUser([FromBody] CreateUserRequestDto data) {
+            try
+            {
+                User user = new User { Fname = data.fname, Lname = data.lname, CreateTime = new DateTime() };
+                await db.Users.AddAsync(user);
+                await db.SaveChangesAsync();
+                return StatusCode(StatusCodes.Status201Created, user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> getUser() 
+        public async Task<ActionResult> getUser() 
         {
-            return await this.userBusiness.getUser();
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, db.Users.ToList());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> getUserById(string id)
+        public async Task<ActionResult> getUserById(string id)
         {
-            return await this.userBusiness.getUserById(id);
+            try
+            {
+                var user = from _user in db.Users
+                           where _user.Id.Equals(long.Parse(id))
+                           select _user;
+
+                return StatusCode(StatusCodes.Status200OK, user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
 
         [HttpPut]
-        public async Task<ActionResult<User>> updateUser([FromBody] UpdateUserRequestDto data)
+        public async Task<ActionResult> updateUser([FromBody] UpdateUserRequestDto data)
         {
-            return await this.userBusiness.updateUser(data);
+            try
+            {
+                var user = db.Users.Where(x => x.Id.Equals(long.Parse(data.id))).First();
+                user.Fname = data.fname;
+                user.Lname = data.lname;
+                await db.SaveChangesAsync();
+                return StatusCode(StatusCodes.Status200OK, user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<OkResult>> deleteUser(string id) 
+        public async Task<ActionResult> deleteUser(string id) 
         {
-            return await this.userBusiness.deleteUser(id);
+            try
+            {
+                var user = db.Users.Where(x => x.Id.Equals(long.Parse(id))).FirstOrDefault();
+                db.Users.Remove(user);
+                await db.SaveChangesAsync();
+                return StatusCode(StatusCodes.Status200OK);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
     }
 }

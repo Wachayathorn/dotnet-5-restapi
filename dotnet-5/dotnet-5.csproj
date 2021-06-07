@@ -11,7 +11,6 @@
     <None Remove="MySql.Data.EntityFrameworkCore" />
     <None Remove="MySql.EntityFrameworkCore" />
     <None Remove="Controllers\" />
-    <None Remove="Business\" />
     <None Remove="Dto\" />
     <None Remove="Dto\Request\" />
     <None Remove="Dto\Response\" />
@@ -29,6 +28,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Business\" />
   </ItemGroup>
 </Project>

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wachayathorn\\Desktop\\Coding\\dotnet-5-restapi\\dotnet-5\\dotnet-5.csproj": {}
+    "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/dotnet-5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wachayathorn\\Desktop\\Coding\\dotnet-5-restapi\\dotnet-5\\dotnet-5.csproj": {
+    "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/dotnet-5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wachayathorn\\Desktop\\Coding\\dotnet-5-restapi\\dotnet-5\\dotnet-5.csproj",
+        "projectUniqueName": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/dotnet-5.csproj",
         "projectName": "dotnet-5",
-        "projectPath": "C:\\Users\\Wachayathorn\\Desktop\\Coding\\dotnet-5-restapi\\dotnet-5\\dotnet-5.csproj",
-        "packagesPath": "C:\\Users\\Wachayathorn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wachayathorn\\Desktop\\Coding\\dotnet-5-restapi\\dotnet-5\\obj\\",
+        "projectPath": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/dotnet-5.csproj",
+        "packagesPath": "/Users/wachayathorn/.nuget/packages/",
+        "outputPath": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Wachayathorn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/wachayathorn/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }
