@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  dotnet:
+    image: dotnet
+    ports:
+      - 8080:80
+    environment: 
+      - ConnectionStrings__MySQLConnection=Server=localhost;Port=3306;User=root;Password=root;Database=DOTNET-5
