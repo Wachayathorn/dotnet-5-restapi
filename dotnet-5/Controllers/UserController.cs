@@ -22,7 +22,8 @@ namespace dotnet_5.Controllers
         public async Task<ActionResult> createUser([FromBody] CreateUserRequestDto data) {
             try
             {
-                User user = new User { Fname = data.fname, Lname = data.lname, CreateTime = new DateTime() };
+                DateTime dateNow = DateTime.Now;
+                User user = new User { Fname = data.fname, Lname = data.lname, CreateTime = dateNow};
                 await db.Users.AddAsync(user);
                 await db.SaveChangesAsync();
                 return StatusCode(StatusCodes.Status201Created, user);
@@ -68,9 +69,11 @@ namespace dotnet_5.Controllers
         {
             try
             {
+                DateTime dateNow = DateTime.Now;
                 var user = db.Users.Where(x => x.Id.Equals(long.Parse(data.id))).First();
                 user.Fname = data.fname;
                 user.Lname = data.lname;
+                user.CreateTime = dateNow;
                 await db.SaveChangesAsync();
                 return StatusCode(StatusCodes.Status200OK, user);
             }
