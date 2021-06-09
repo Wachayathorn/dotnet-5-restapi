@@ -3,7 +3,20 @@ version: '3'
 services:
   dotnet:
     image: dotnet
+    container_name: dotnet
     ports:
       - 8080:80
     environment: 
-      - ConnectionStrings__MySQLConnection=Server=localhost;Port=3306;User=root;Password=root;Database=DOTNET-5
+      - ConnectionStrings:MySQLConnection=Server=db;Port=3306;User=root;Password=root;Database=DOTNET-5
+    depends_on: 
+      - db
+
+  db:
+    image: mariadb:10.6.0
+    container_name: db
+    ports: 
+      - 3306:3306
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=DOTNET-5
