@@ -5,6 +5,7 @@
     <RootNamespace>dotnet_5</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'dotnet-5' " />
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Pomelo.EntityFrameworkCore.MySql" />

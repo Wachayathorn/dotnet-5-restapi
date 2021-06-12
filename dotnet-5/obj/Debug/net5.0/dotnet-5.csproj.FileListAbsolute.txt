@@ -145,4 +145,4 @@ C:/Users/Wachayathorn/Desktop/Coding/dotnet-5-restapi/dotnet-5/obj/Debug/net5.0/
 /Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/Debug/net5.0/ref/dotnet-5.dll
 /Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/Debug/net5.0/dotnet-5.pdb
 /Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/Debug/net5.0/dotnet-5.genruntimeconfig.cache
-/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/Debug/net5.0/dotnet-5.csproj.AssemblyReference.cache
+/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/Debug/net5.0/dotnet-5.csprojAssemblyReference.cache
