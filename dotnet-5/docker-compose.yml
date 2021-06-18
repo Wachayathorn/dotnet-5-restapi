@@ -7,16 +7,16 @@ services:
     ports:
       - 8080:80
     environment: 
-      - ConnectionStrings:MySQLConnection=Server=db;Port=3306;User=root;Password=root;Database=DOTNET-5
-    depends_on: 
-      - db
+      - ConnectionStrings:MySQLConnection=Server=35.185.190.1;Port=31593;User=root;Password=P@ssw0rd;Database=DOTNET-5
+    # depends_on: 
+    #   - db
 
-  db:
-    image: mariadb:10.6.0
-    container_name: db
-    ports: 
-      - 3306:3306
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=DOTNET-5
+  # db:
+  #   image: mariadb:10.6.0
+  #   container_name: db
+  #   ports: 
+  #     - 3306:3306
+  #   restart: always
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=root
+  #     - MYSQL_DATABASE=DOTNET-5

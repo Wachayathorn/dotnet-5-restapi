@@ -14,7 +14,7 @@
         "outputPath": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/wachayathorn/.config/NuGet/NuGet.Config"
+          "/Users/wachayathorn/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
