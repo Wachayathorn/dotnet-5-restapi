@@ -1880,7 +1880,7 @@
       "outputPath": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/wachayathorn/.nuget/NuGet/NuGet.Config"
+        "/Users/wachayathorn/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1941,7 +1941,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
       }
     }
   }

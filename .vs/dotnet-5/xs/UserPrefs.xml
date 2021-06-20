@@ -1,14 +1,21 @@
 ﻿<Properties StartupConfiguration="{6C1FB0D6-28F0-4F5D-A647-0E8896018FFC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-5/Controllers/FilesStorageController.cs">
+    <Files>
+      <File FileName="dotnet-5/Controllers/FilesStorageController.cs" Line="14" Column="33" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dotnet-5" expanded="True">
             <Node name="dotnet-5" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

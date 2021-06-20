@@ -5,15 +5,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace dotnet_5.Controllers
 {
     [Route("file")]
+    [RequestSizeLimit(5368706371)]
+    [RequestFormLimits(MultipartBodyLengthLimit = 5368706371)]
     public class FilesStorageController : Controller
     {
-        [HttpPost]
-        [RequestFormLimits(MultipartBodyLengthLimit = 1073741824)]
-        [RequestSizeLimit(1073741824)]
+        private readonly IOptions<EnvConfiguration> env;
+
+        public FilesStorageController(IOptions<EnvConfiguration> env)
+        {
+            this.env = env;
+        }
+
+        [HttpPost , Route("upload")]
         public async Task<ActionResult> Upload(IFormFile file)
         {
             try
