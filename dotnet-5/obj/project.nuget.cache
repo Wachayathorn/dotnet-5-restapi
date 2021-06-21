@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CHYziSomKr1Se05ypPjxNhqggUxRiY39NjV4F3MEpP6p8Scqbj/TkQCiQXEfWh/2DyFnwImJqEXaIvlmmRp0sw==",
+  "dgSpecHash": "0HZlf+hZ3p1VJfF4n+CDiMiJklsy+lZ2NU5h2FC6eWoSfW1NFMNrWuN9g23l2OiKX6CI76z9yZsMW67yAOmqwQ==",
   "success": true,
   "projectFilePath": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/dotnet-5.csproj",
   "expectedPackageFiles": [
     "/Users/wachayathorn/.nuget/packages/bouncycastle.netcore/1.8.5/bouncycastle.netcore.1.8.5.nupkg.sha512",
+    "/Users/wachayathorn/.nuget/packages/filehelpers/3.5.0/filehelpers.3.5.0.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/google.protobuf/3.14.0/google.protobuf.3.14.0.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/k4os.compression.lz4/1.1.11/k4os.compression.lz4.1.1.11.nupkg.sha512",

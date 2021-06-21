@@ -43,6 +43,15 @@ namespace dotnet_5
 
             services.AddControllers();
 
+            services.AddRazorPages(options =>
+            {
+                options.Conventions.AddPageApplicationModelConvention("/file", model =>
+                {
+                    model.Filters.Add(
+                        new DisableFormValueModelBindingAttribute());
+                });
+            });
+
             // Swagger configuration
             services.AddSwaggerGen(c =>
             {
@@ -65,7 +74,6 @@ namespace dotnet_5
             app.UseRouting();
 
             app.UseAuthorization();
-
 
             app.UseEndpoints(endpoints =>
             {

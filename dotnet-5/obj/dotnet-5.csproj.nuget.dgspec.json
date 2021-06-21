@@ -14,7 +14,7 @@
         "outputPath": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/wachayathorn/.config/NuGet/NuGet.Config"
+          "/Users/wachayathorn/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FileHelpers": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
