@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace dotnet_5.Controllers
 {
@@ -48,7 +49,25 @@ namespace dotnet_5.Controllers
                     await file.CopyToAsync(stream);
                 }
 
-                return StatusCode(StatusCodes.Status200OK);
+                return StatusCode(StatusCodes.Status200OK, file.Length);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
+        private static HttpClient Client { get; } = new HttpClient();
+        [HttpGet("{filename}")]
+        public async Task<ActionResult> downloadFile(string filename)
+        {
+            try
+            {
+                var storage = Path.Combine(Directory.GetCurrentDirectory(), "Storage");
+                var filePath = Path.Combine(storage, filename);
+                var content = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                var response = File(content, "application/octet-stream");//FileStreamResult
+                return response;
             }
             catch (Exception ex)
             {
