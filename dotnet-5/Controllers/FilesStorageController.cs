@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace dotnet_5.Controllers
 {
@@ -20,14 +21,14 @@ namespace dotnet_5.Controllers
     {
         private readonly IOptions<EnvConfiguration> env;
         private static readonly FormOptions _defaultFormOptions = new FormOptions();
-        private readonly string[] _permittedExtensions = { ".jpeg", ".mp4", ".mov" , ".jpg" };
+        private readonly string[] _permittedExtensions = { ".jpeg", ".mp4", ".mov", ".jpg" };
 
         public FilesStorageController(IOptions<EnvConfiguration> env)
         {
             this.env = env;
         }
 
-        [HttpPost, Route("upload-large-file")]
+        [HttpPost, Route("upload-with-formfile")]
         public async Task<ActionResult> Upload(IFormFile file)
         {
             try
@@ -55,7 +56,7 @@ namespace dotnet_5.Controllers
             }
         }
 
-        [HttpPost, Route("upload-small-file")]
+        [HttpPost, Route("upload-with-stream")]
         [DisableFormValueModelBinding]
         public async Task<IActionResult> UploadPhysical()
         {
@@ -110,5 +111,69 @@ namespace dotnet_5.Controllers
             return Created(nameof(FilesStorageController), null);
         }
 
+        [HttpPost, Route("upload-with-chunked")]
+        public ActionResult UploadChunk(IFormFile file, string chunkMetadata)
+        {
+            try
+            {
+                var metaDataObject = JsonConvert.DeserializeObject<ChunkMetadata>(chunkMetadata);
+                if (!string.IsNullOrEmpty(chunkMetadata))
+                {
+                    CheckFileExtensionValid(metaDataObject.FileName);
+                    string tempPath = Path.Combine(Directory.GetCurrentDirectory(), "Storage");
+                    var tempFilePath = Path.Combine(tempPath, metaDataObject.FileGuid + ".tmp");
+                    if (!Directory.Exists(tempPath))
+                        Directory.CreateDirectory(tempPath);
+
+                    AppendContentToFile(tempFilePath, file);
+
+                    if (metaDataObject.Index == (metaDataObject.TotalCount - 1))
+                        ProcessUploadedFile(tempFilePath, metaDataObject.FileName);
+                }
+
+            }
+            catch
+            {
+                return BadRequest();
+            }
+            return Ok();
+        }
+        public void CheckFileExtensionValid(string fileName)
+        {
+            fileName = fileName.ToLower();
+            string[] imageExtensions = { ".jpg", ".jpeg", ".gif", ".png", ".mp4", ".mov" };
+
+            var isValidExtenstion = imageExtensions.Any(ext =>
+            {
+                return fileName.LastIndexOf(ext) > -1;
+            });
+            if (!isValidExtenstion)
+                throw new Exception("Not allowed file extension");
+        }
+        public void ProcessUploadedFile(string tempFilePath, string fileName)
+        {
+            string FilePath = Path.Combine(Directory.GetCurrentDirectory(), "Storage");
+
+            if (!Directory.Exists(FilePath))
+            {
+                Directory.CreateDirectory(FilePath);
+            }
+
+            var filePath = Path.Combine(FilePath, fileName);
+            System.IO.File.Copy(tempFilePath, Path.Combine(FilePath, fileName));
+        }
+        public void AppendContentToFile(string path, IFormFile content)
+        {
+            using (var stream = new FileStream(path, FileMode.Append, FileAccess.Write))
+            {
+                content.CopyTo(stream);
+                CheckMaxFileSize(stream);
+            }
+        }
+        public void CheckMaxFileSize(FileStream stream)
+        {
+            if (stream.Length > 5368706371)
+                throw new Exception("File is too large");
+        }
     }
 }

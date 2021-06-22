@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0HZlf+hZ3p1VJfF4n+CDiMiJklsy+lZ2NU5h2FC6eWoSfW1NFMNrWuN9g23l2OiKX6CI76z9yZsMW67yAOmqwQ==",
+  "dgSpecHash": "q4XphgNXLxt0j+5nKrbZNqJmQtZvfzSDV+gTNQrx9Vfkim/OcuC8IWU6sgZIrZMV5tOO5tEsKDUigqwqiRUgww==",
   "success": true,
   "projectFilePath": "/Users/wachayathorn/Desktop/Github/dotnet-5-restapi/dotnet-5/dotnet-5.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "/Users/wachayathorn/.nuget/packages/mysql.data/8.0.24/mysql.data.8.0.24.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/mysql.entityframeworkcore/5.0.3/mysql.entityframeworkcore.5.0.3.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/mysqlconnector/1.3.7/mysqlconnector.1.3.7.nupkg.sha512",
+    "/Users/wachayathorn/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/pomelo.entityframeworkcore.mysql/5.0.0/pomelo.entityframeworkcore.mysql.5.0.0.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/swashbuckle.aspnetcore/6.1.4/swashbuckle.aspnetcore.6.1.4.nupkg.sha512",
     "/Users/wachayathorn/.nuget/packages/swashbuckle.aspnetcore.swagger/6.1.4/swashbuckle.aspnetcore.swagger.6.1.4.nupkg.sha512",
