@@ -120,7 +120,7 @@ namespace dotnet_5.Controllers
                 if (!string.IsNullOrEmpty(chunkMetadata))
                 {
                     CheckFileExtensionValid(metaDataObject.FileName);
-                    string tempPath = Path.Combine(Directory.GetCurrentDirectory(), "Storage");
+                    string tempPath = Path.Combine(Directory.GetCurrentDirectory(), "temp");
                     var tempFilePath = Path.Combine(tempPath, metaDataObject.FileGuid + ".tmp");
                     if (!Directory.Exists(tempPath))
                         Directory.CreateDirectory(tempPath);

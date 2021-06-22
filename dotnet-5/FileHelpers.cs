@@ -163,6 +163,7 @@ namespace dotnet_5
         {
             try
             {
+                string tempPath = Path.Combine(Directory.GetCurrentDirectory(), "temp");
                 using (var memoryStream = new MemoryStream())
                 {
                     await section.Body.CopyToAsync(memoryStream);
